@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch("http://localhost:3002/api/weComForm", {
+            const response = await fetch("https://crm-server-opal.vercel.app/api/weComForm",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
