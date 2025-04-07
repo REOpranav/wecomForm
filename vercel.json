@@ -1,5 +1,16 @@
 {
   "version": 2,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOW-FROM https://work.weixin.qq.com"
+        }
+      ]
+    }
+  ],
   "routes": [
     {
       "handle": "filesystem"
