@@ -11,13 +11,10 @@
       ]
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/",
-      "dest": "/Form.html"
+      "source": "/",
+      "destination": "/Form.html"
     }
   ]
 }
