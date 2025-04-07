@@ -1,18 +1,12 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "Form.html",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      {
-        "handle": "filesystem"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/Form.html"
-      }
-    ]
-  }
+  "version": 2,
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/",
+      "dest": "/Form.html"
+    }
+  ]
+}
