@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch("https://crm-server-opal.vercel.app/api/weComForm",{
+            const response = await fetch("https://crm-server-opal.vercel.app/api/weComForm", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -26,13 +26,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 const result = await response.json()
-                console.log("Success:", result);
+                showToast('Record Created in zoho CRM' , true)
                 form.reset();
             } else {
-                console.error("Error submitting form")
+                showToast('Failed to create')
             }
         } catch (error) {
+            showToast('Failed to create')
             console.error("Fetch error:", error);
         }
     });
 });
+
+function showToast(message, isSuccess = false) { // toast message
+    const toast = document.querySelector('.toast');
+    toast.textContent = message;
+    toast.style.backgroundColor = isSuccess ? '#4CAF50' : '#f44949';
+    toast.classList.remove('hide');
+    toast.style.visibility = 'visible';
+
+    void toast.offsetWidth;
+
+    toast.classList.add('show');
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+        toast.classList.add('hide');
+
+        setTimeout(() => {
+            toast.style.visibility = 'hidden';
+        }, 200);
+    }, 1500);
+}
