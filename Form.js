@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 const result = await response.json()
-                showToast('Record Created in zoho CRM' , true)
+                showToast('Record Created' , true)
                 form.reset();
             } else {
                 showToast('Failed to create')
