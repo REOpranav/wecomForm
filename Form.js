@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch("https://crm-server-opal.vercel.app/api/weComForm", {
+            const response = await fetch("https://6220-61-0-15-1.ngrok-free.app/api/weComForm", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
